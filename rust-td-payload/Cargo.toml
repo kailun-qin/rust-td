@@ -1,0 +1,31 @@
+[package]
+name = "rust-td-payload"
+version = "0.1.0"
+authors = [
+    "Jiewen Yao <jiewen.yao@intel.com>",
+    "Xiaoyu Lu <xiaoyux.lu@intel.com>"
+    ]
+edition = "2018"
+
+# add build process
+# build = "build.rs"
+
+#[build-dependencies]
+#cc = { version = "1.0.62", default-features = false }
+
+
+[dependencies]
+spin = "0.4.9"
+r-efi = "3.2.0"
+linked_list_allocator = "0.8.11"
+log = "0.4.13"
+r-uefi-pi =  { path = "../r-uefi-pi" }
+uefi-pi =  { path = "../uefi-pi" }
+tdx-tdcall = { path = "../tdx-tdcall" }
+tdx-logger =  { path = "../tdx-logger" }
+tdx-exception =  { path = "../tdx-exception" }
+rust-td-layout = { path = "../rust-td-layout" }
+
+[dependencies.lazy_static]
+version = "1.0"
+features = ["spin_no_std"]
